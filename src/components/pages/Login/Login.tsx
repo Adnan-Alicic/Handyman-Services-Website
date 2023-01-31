@@ -5,6 +5,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = () => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (emailRegex.test(email) === true) {
+      console.log("Email je validan");
+    } else {
+      console.log("Email nije validan");
+    }
     console.log(email, password);
   };
   return (
